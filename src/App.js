@@ -1,20 +1,25 @@
 import React from "react";
-import UserContext from "./context/UserContext";
-import MoreInfo from "./components/MoreInfo";
+import BotonCambiarData from "./components/BotonCambiarData";
+import Pagina1 from "./components/Pagina1";
+import Pagina2 from "./components/Pagina2";
+import DataContextComponent from "./context/DataContext";
+
+
+
 
 function App() {
-  const userData = 
-  {
-    name: "Hector",
-    years: 27,
-  }
+
   return (
-    <UserContext.Provider value={userData}>
-    <div>
-      <h1>the UseContext tutorial</h1>
-      <MoreInfo />
-    </div>
-    </UserContext.Provider>
+  <>
+    <DataContextComponent>
+  {/* Aquí nosotros estamos envolviendo los componentes que queremos que usen los estados globables, con el componente de React desde la carpeta context.  */}
+
+      <Pagina1 />
+      <Pagina2 />
+      <BotonCambiarData  />
+
+    </DataContextComponent>
+  </>
   );
 }
 
