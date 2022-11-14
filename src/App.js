@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import UserContext from "./context/UserContext";
+import MoreInfo from "./components/MoreInfo";
 
 function App() {
+  const userData = 
+  {
+    name: "Hector",
+    years: 27,
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <UserContext.Provider value={userData}>
+    <div>
+      <h1>the UseContext tutorial</h1>
+      <MoreInfo />
     </div>
+    </UserContext.Provider>
   );
 }
 
